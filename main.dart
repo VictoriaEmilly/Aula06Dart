@@ -24,7 +24,7 @@ class Home extends StatelessWidget {
                 onPressed: () => Navigator.push(
                   context,
                   MaterialPageRoute(
-                    builder: (_) => Descricao(),
+                    builder: (_) => Descricao("Nova York", "Nova York, EUA","A cidade de Nova York"),
                   ),
                 ),
                 child: Image.network(
@@ -37,48 +37,106 @@ class Home extends StatelessWidget {
                 onPressed: () => Navigator.push(
                   context,
                   MaterialPageRoute(
-                    builder: (_) => Descricao(),
+                    builder: (_) => Descricao("Grand Canyon", "Arizona, EUA","As montanhas de Grand Canyon"),
                   ),
                 ),
-                  child: Image.network(
+                child: Image.network(
                   "https://images.pexels.com/photos/213782/pexels-photo-213782.jpeg?auto=compress&cs=tinysrgb&dpr=1&w=500"),
+              ),
             ),
-          ),
             Padding(
               padding: const EdgeInsets.all(8.0),
-              child: Image.network(
+              child: TextButton(
+                onPressed: () => Navigator.push(
+                  context,
+                  MaterialPageRoute(
+                    builder: (_) => Descricao("Paraty", "Rio de Janeiro, BR","A cidade de Nova York"),
+                  ),
+                ),
+                child: Image.network(
                   "https://images.pexels.com/photos/213783/pexels-photo-213783.jpeg?auto=compress&cs=tinysrgb&dpr=1&w=500"),
+              ),
             ),
             Padding(
               padding: const EdgeInsets.all(8.0),
-              child: Image.network(
-                  "https://images.pexels.com/photos/213784/pexels-photo-213784.jpeg?auto=compress&cs=tinysrgb&dpr=1&w=500"),
+              child: TextButton(
+                onPressed: () => Navigator.push(
+                  context,
+                  MaterialPageRoute(
+                    builder: (_) => Descricao("Nova York", "Nova York, EUA","A cidade de Nova York"),
+                  ),
+                ),
+                child: Image.network(
+                    "https://images.pexels.com/photos/213781/pexels-photo-213781.jpeg?auto=compress&cs=tinysrgb&dpr=1&w=500"),
+              ),
             ),
             Padding(
               padding: const EdgeInsets.all(8.0),
-              child: Image.network(
-                  "https://images.pexels.com/photos/213785/pexels-photo-213785.jpeg?auto=compress&cs=tinysrgb&dpr=1&w=500"),
+              child: TextButton(
+                onPressed: () => Navigator.push(
+                  context,
+                  MaterialPageRoute(
+                    builder: (_) => Descricao("Nova York", "Nova York, EUA","A cidade de Nova York"),
+                  ),
+                ),
+                child: Image.network(
+                    "https://images.pexels.com/photos/213781/pexels-photo-213781.jpeg?auto=compress&cs=tinysrgb&dpr=1&w=500"),
+              ),
             ),
             Padding(
               padding: const EdgeInsets.all(8.0),
-              child: Image.network(
-                  "https://images.pexels.com/photos/213786/pexels-photo-213786.jpeg?auto=compress&cs=tinysrgb&dpr=1&w=500"),
+              child: TextButton(
+                onPressed: () => Navigator.push(
+                  context,
+                  MaterialPageRoute(
+                    builder: (_) => Descricao("Nova York", "Nova York, EUA","A cidade de Nova York"),
+                  ),
+                ),
+                child: Image.network(
+                    "https://images.pexels.com/photos/213781/pexels-photo-213781.jpeg?auto=compress&cs=tinysrgb&dpr=1&w=500"),
+              ),
             ),
             Padding(
               padding: const EdgeInsets.all(8.0),
-              child: Image.network(
-                  "https://images.pexels.com/photos/213787/pexels-photo-213787.jpeg?auto=compress&cs=tinysrgb&dpr=1&w=500"),
+              child: TextButton(
+                onPressed: () => Navigator.push(
+                  context,
+                  MaterialPageRoute(
+                    builder: (_) => Descricao("Nova York", "Nova York, EUA","A cidade de Nova York"),
+                  ),
+                ),
+                child: Image.network(
+                    "https://images.pexels.com/photos/213781/pexels-photo-213781.jpeg?auto=compress&cs=tinysrgb&dpr=1&w=500"),
+              ),
             ),
             Padding(
               padding: const EdgeInsets.all(8.0),
-              child: Image.network(
-                  "https://images.pexels.com/photos/213788/pexels-photo-213788.jpeg?auto=compress&cs=tinysrgb&dpr=1&w=500"),
+              child: TextButton(
+                onPressed: () => Navigator.push(
+                  context,
+                  MaterialPageRoute(
+                    builder: (_) => Descricao("Nova York", "Nova York, EUA","A cidade de Nova York"),
+                  ),
+                ),
+                child: Image.network(
+                    "https://images.pexels.com/photos/213781/pexels-photo-213781.jpeg?auto=compress&cs=tinysrgb&dpr=1&w=500"),
+              ),
             ),
             Padding(
               padding: const EdgeInsets.all(8.0),
-              child: Image.network(
-                  "https://images.pexels.com/photos/213789/pexels-photo-213789.jpeg?auto=compress&cs=tinysrgb&dpr=1&w=500"),
+              child: TextButton(
+                onPressed: () => Navigator.push(
+                  context,
+                  MaterialPageRoute(
+                    builder: (_) => Descricao("Nova York", "Nova York, EUA","A cidade de Nova York"),
+                  ),
+                ),
+                child: Image.network(
+                    "https://images.pexels.com/photos/213781/pexels-photo-213781.jpeg?auto=compress&cs=tinysrgb&dpr=1&w=500"),
+              ),
+              // DIVISAO
             ),
+          
           ],
         ),
       ),
@@ -87,30 +145,36 @@ class Home extends StatelessWidget {
 }
 
 class Descricao extends StatelessWidget {
+  final String tituloAppBar;
+  final String tituloTexto;
+  final String texto;
+
+  Descricao(this.tituloAppBar,this.tituloTexto, this.texto);
+
   @override
   Widget build(BuildContext context) {
     return Scaffold(
       appBar: AppBar(
-        title: const Text("New York"),
+        title: Text(tituloAppBar),
       ),
       body: Center(
         child: Column(
           children: [
             Container(
               margin: const EdgeInsets.all(40),
-              child: const Text(
-                'NY, EUA',
+              child: Text(
+                tituloTexto,
                 style: TextStyle(
                   fontWeight: FontWeight.bold,
                   color: Colors.black,
-                  fontSize: 20,
+                  fontSize: 30,
                 ),
               ),
             ),
             Container(
-              margin: const EdgeInsets.fromLTRB(80,20,80,40),
-              child: const Text(
-                'A cidade de Nova York compreende 5 distritos situados no encontro do rio Hudson com o Oceano Atlântico. No centro da cidade fica Manhattan, um distrito com alta densidade demográfica que está entre os principais centros comerciais, financeiros e culturais do mundo. ',
+              margin: const EdgeInsets.all(20),
+              child: Text(
+                texto,
                 style: TextStyle(
                   fontWeight: FontWeight.bold,
                   color: Colors.black,
@@ -133,7 +197,7 @@ class Descricao extends StatelessWidget {
                   fontWeight: FontWeight.bold,
                 ),
               ),
-              child: Icon(Icons.arrow_back),
+              child: const Text('Voltar para a Primeira Rota'),
             ),
           ],
         ),
